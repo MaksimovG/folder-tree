@@ -1,0 +1,45 @@
+.tree {
+  @include style-reset;
+
+  list-style: none;
+  position: relative;
+}
+
+.tree__item {
+  position: relative;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 25px;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    left: 6px;
+    top: 0;
+    border-left: 1px dashed $main-color-text;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 15px;
+    position: absolute;
+    left: 6px;
+    top: 11px;
+    border-top: 1px dashed $main-color-text;
+  }
+
+  &--folder {
+    padding-left: 0;
+  }
+}
+
+.tree__item:last-child {
+  &::before {
+    height: 12px;
+  }
+}

@@ -1,0 +1,10 @@
+@mixin style-reset {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}

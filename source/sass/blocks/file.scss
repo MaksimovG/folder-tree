@@ -1,0 +1,24 @@
+.file {
+  @include style-reset;
+
+  color: $main-color-text;
+
+  color: $main-color-text;
+  padding-left: 21px;
+  position: relative;
+  user-select: none;
+
+  &::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url("../img/file.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "gulp",
-    "start": "gulp start",
+    "build": "gulp build",
+    "start": "gulp",
     "test": "eslint ."
   },
   "repository": {
@@ -19,8 +19,6 @@
   },
   "homepage": "https://github.com/MaksimovG/folder-tree#readme",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "5.45.1",
-    "@typescript-eslint/parser": "5.45.1",
     "autoprefixer": "10.4.13",
     "browser": "0.2.6",
     "browser-sync": "2.27.11",
@@ -32,12 +30,11 @@
     "gulp-postcss": "9.0.1",
     "gulp-rename": "2.0.0",
     "gulp-sass": "5.1.0",
-    "gulp-typescript": "6.0.0-alpha.1",
     "htmlmin": "0.0.7",
     "postcss": "8.3.11",
     "postcss-csso": "6.0.1",
     "sass": "1.57.1",
-    "typescript": "4.9.4"
+    "gulp-terser": "2.1.0"
   },
   "browserslist": [
     "last 2 versions",

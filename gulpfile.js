@@ -10,8 +10,7 @@ import rename from 'gulp-rename';
 import htmlmin from 'gulp-htmlmin';
 import {deleteAsync} from 'del';
 import browser from 'browser-sync';
-import ts from 'gulp-typescript';
-const tsProject = ts.createProject("tsconfig.json");
+import terser from 'gulp-terser';
 
 // Styles
 
@@ -36,11 +35,11 @@ const html = () => {
     .pipe(gulp.dest('build'));
 }
 
-// Scripts
 
-const scripts = (cb) => {
-  tsProject.src().pipe(tsProject()).js.pipe(gulp.dest("build/js/"));
-  cb();
+const scripts = () => {
+  return gulp.src('source/js/*.js')
+    .pipe(terser())
+    .pipe(gulp.dest('build/js'));
 }
 
 //Copy
@@ -92,8 +91,8 @@ const reload = (done) => {
 // Watcher
 
 const watcher = () => {
-  gulp.watch('source/sass/**/*.sass', gulp.series(styles));
-  gulp.watch('source/js/script.js', gulp.series(scripts));
+  gulp.watch('source/sass/**/*.scss', gulp.series(styles));
+  gulp.watch('source/js/main.js', gulp.series(scripts));
   gulp.watch('source/*.html', gulp.series(html, reload));
 }
 

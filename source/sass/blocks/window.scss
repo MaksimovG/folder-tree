@@ -1,0 +1,22 @@
+.window {
+  width: 100%;
+  background-color: $main-background-color;
+
+  @include tablet {
+    display: flex;
+  }
+}
+
+.window__aside {
+  min-height: 500px;
+  width: 100%;
+  background-color: $aside-background-color;
+  padding: 15px;
+  overflow-y: auto;
+
+  @include tablet {
+    width: 300px;
+    min-height: auto;
+    flex-grow: 0;
+  }
+}
